@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Salary Calcultor</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Salary Calcultor</h1>
+    </header>
+    <div class="main">
+      <input
+        type="text"
+        id="name"
+        placeholder="Enter employee name"
+        value="Mohammed Elgohary"
+      />
+
+      <input type="date" id="startDate" />
+
+      <input type="date" id="endDate" />
+
+      <input
+        type="number"
+        id="NumberOfWorkHours"
+        placeholder="Work hours per day"
+      />
+
+      <input type="number" id="Salary" placeholder="Enter Salary" />
+
+      <input type="number" id="WorkedHours" placeholder="Worked Hours" />
+
+      <input type="number" id="SpendTime" placeholder="Spent time" />
+    </div>
+
+    <div class="result-contianer">
+      <div class="result-header">
+        <strong>Details :</strong>
+        <div class="btnCopy-container">
+          <button id="btnCopy">copy</button>
+        </div>
+      </div>
+      <div class="result-body">
+        <pre><div id="result"></div></pre>
+      </div>
+    </div>
+
+    <footer>
+      &copy; <strong>Mohammed El-gohary</strong>
+      <script>
+        document.write(new Date().getFullYear());
+      </script>
+    </footer>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

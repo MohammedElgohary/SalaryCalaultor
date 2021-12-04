@@ -1,0 +1,97 @@
+* {
+  box-sizing: border-box;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  line-height: 30px;
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+}
+
+*:focus-visible,
+*:focus {
+  border: 1px solid #ccc;
+  outline: 0;
+  box-shadow: unset !important;
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+header {
+  padding: 40px 0px;
+  text-align: center;
+  background-color: #000;
+  color: #fff;
+}
+
+.main input:first-child {
+  margin-top: 40px !important;
+}
+
+.main input,
+.result-contianer {
+  width: 95%;
+  margin: 10px calc(2.5%);
+}
+
+.main input {
+  padding: 8px 15px;
+  border: 1px solid #ccc;
+  line-height: 20px;
+}
+
+.result-contianer {
+  background-color: #eee;
+  color: #000;
+  margin-bottom: 40px;
+}
+
+.result-header {
+  background-color: #ddd;
+  color: #000;
+  padding: 12px 25px;
+  margin-top: 10px;
+  margin-bottom: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.result-header #btnCopy {
+  background-color: #000;
+  border: 1px solid #000;
+  color: #fff;
+  padding: 3px 30px;
+  cursor: pointer;
+}
+.result-header #btnCopy.success {
+  background-color: seagreen;
+  border: 1px solid green;
+}
+
+.result-header #btnCopy.error {
+  background-color: crimson;
+  border: 1px solid red;
+}
+
+.result-header #btnCopy:hover {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #000;
+}
+
+#result {
+  padding: 15px 25px;
+  margin-top: 10px;
+  font-size: 21px;
+}
+
+footer {
+  padding: 12px 0px;
+  text-align: center;
+  background-color: #ccc;
+}
