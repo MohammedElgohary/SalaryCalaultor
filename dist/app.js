@@ -6,7 +6,8 @@ let dateFrom = document.querySelector("#startDate"),
   WorkedHours = document.querySelector("#WorkedHours"),
   SpendTime = document.querySelector("#SpendTime"),
   btnCopy = document.querySelector("#btnCopy"),
-  resultDiv = document.querySelector("#result");
+  resultDiv = document.querySelector("#result"),
+  holidays = document.querySelectorAll(".holiday");
 
 let days = {
   Sunday: 0,
@@ -16,6 +17,16 @@ let days = {
   Thursday: 4,
   Friday: 5,
   Saturday: 6,
+};
+
+let holidaysObject = {
+  0: false,
+  1: false,
+  2: false,
+  3: false,
+  4: false,
+  5: true,
+  6: false,
 };
 
 const calculateDayNumber = (startDate, endDate, givenDay) => {
@@ -105,6 +116,16 @@ const getDaysDetils = ({
 };
 
 const trigerdFunction = () => {
+  let holis = [];
+  
+  for (const key in holidaysObject) {
+    if (holidaysObject[key]) {
+      holis.push(+key);
+    }
+  };
+
+  console.log(holis);
+
   if (
     NumberOfWorkHours.value &&
     Salary.value &&
@@ -115,11 +136,11 @@ const trigerdFunction = () => {
     resultDiv.innerHTML = JSON.stringify(
       getDaysDetils({
         workHours: NumberOfWorkHours.value,
-        holiDays: [days.Friday, days.Sunday],
+        holiDays: holis,
         Salary: Salary.value,
         workedHours: WorkedHours.value,
         spendTime: SpendTime.value,
-        name: Name.value
+        name: Name.value,
       }),
       null,
       "\t"
@@ -189,4 +210,12 @@ btnCopy.addEventListener("click", (e) => {
       btnCopy.classList.remove("error");
     }, 1000);
   }
+});
+
+holidays.forEach((btn, index) => {
+  btn.addEventListener("click", () => {
+    btn.classList.toggle("active");
+    holidaysObject[index] = !holidaysObject[index];
+    trigerdFunction();
+  });
 });
