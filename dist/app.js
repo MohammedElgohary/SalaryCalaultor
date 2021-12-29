@@ -26,7 +26,7 @@ let holidaysObject = {
   3: false,
   4: false,
   5: true,
-  6: false,
+  6: true,
 };
 
 const calculateDayNumber = (startDate, endDate, givenDay) => {
@@ -98,17 +98,17 @@ const getDaysDetils = ({
       to: dateTo.value,
     },
     daysDetails: { ...result },
-    daysCount: allDays,
-    holiDays: restDays,
-    workDays,
-    hoursShouldWork: sholdWork,
-    workedHours,
-    spentTime: spendTime,
-    overTime: OverTime,
-    overTimeSalary: OverTimeSalary,
-    hourSalary: HourSalary,
-    shouldSalary: Salary,
-    yourSalary: YourSalary,
+    daysCount: `${allDays} day`,
+    holiDays: `${restDays} day`,
+    workDays: `${workDays} day`,
+    hoursShouldWork: `${sholdWork} Hours`,
+    workedHours: `${workedHours} Hours`,
+    spentTime: `${spendTime} Hours`,
+    overTime: `${OverTime} Hours`,
+    overTimeSalary: `${OverTimeSalary} L.E`,
+    hourSalary: `${HourSalary} L.E`,
+    shouldSalary: `${Salary} L.E`,
+    yourSalary: `${YourSalary} L.E`,
   };
 
   Report = theReturned;
