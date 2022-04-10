@@ -83,13 +83,14 @@ const getDaysDetils = ({
 
   let sholdWork = workHours * workDays;
 
-  let HourSalary = +Salary / +sholdWork;
+  // let HourSalary = +Salary / +sholdWork;
+  let ShouldSalary = +Salary * +sholdWork;
 
-  let YourSalary = (+workedHours - +spendTime) * +HourSalary;
+  let YourSalary = (+workedHours - +spendTime) * +Salary;
 
   let OverTime = +workedHours - +spendTime - +sholdWork;
 
-  let OverTimeSalary = +OverTime * +HourSalary;
+  let OverTimeSalary = +OverTime * +Salary;
 
   let theReturned = {
     name: name,
@@ -106,8 +107,8 @@ const getDaysDetils = ({
     spentTime: `${spendTime} Hours`,
     overTime: `${OverTime} Hours`,
     overTimeSalary: `${OverTimeSalary} L.E`,
-    hourSalary: `${HourSalary} L.E`,
-    shouldSalary: `${Salary} L.E`,
+    hourSalary: `${Salary} L.E`,
+    shouldSalary: `${ShouldSalary} L.E`,
     yourSalary: `${YourSalary} L.E`,
   };
 
