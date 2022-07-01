@@ -17,6 +17,26 @@
   box-shadow: unset !important;
 }
 
+@-moz-document url-prefix() {
+  /* Disable scrollbar Firefox */
+  html {
+    scrollbar-width: none;
+  }
+}
+
+body {
+  margin: 0;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  overflow-y: scroll;
+  overflow-x: hidden !important;
+}
+body::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+  display: none;
+}
+
 body {
   margin: 0px;
   padding: 0px;
@@ -47,13 +67,13 @@ body {
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
+  gap: 5px;
 }
 
 .form-group .holiday {
   min-width: 200px;
   padding: 8px 15px;
   line-height: 20px;
-  margin: 5px 5px;
   display: flex;
   flex-grow: 1;
   flex-basis: 0;
